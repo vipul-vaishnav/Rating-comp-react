@@ -1,13 +1,19 @@
 import React from 'react';
 
-const Input = ({ value }) => {
+const Input = ({ value, id, handleChange, selected }) => {
   return (
-    <div className="card-form-input">
-      <label>
-        {value}
-        <input type="radio" name="one" hidden />
-      </label>
-    </div>
+    <li className="card-form-input">
+      <input
+        type="radio"
+        name="rating"
+        id={id}
+        value={value}
+        onChange={handleChange}
+        checked={selected === value}
+        hidden
+      />
+      <label htmlFor={id}>{value}</label>
+    </li>
   );
 };
 

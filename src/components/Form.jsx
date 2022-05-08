@@ -10,15 +10,24 @@ const ratingData = [
   { id: 5, rating: 5 },
 ];
 
-const Form = () => {
+const Form = ({ handleChange, handleForm, selected }) => {
   return (
-    <form className="card-form">
+    <form className="card-form" onSubmit={handleForm}>
       <ul className="card-form-inputs">
         {ratingData.map((obj) => {
-          return <Input key={obj.id} value={obj.rating} />;
+          return (
+            <Input
+              key={obj.id}
+              id={obj.id}
+              onChange={handleChange}
+              value={obj.rating}
+              handleChange={handleChange}
+              selected={selected}
+            />
+          );
         })}
       </ul>
-      <Button />
+      <Button isDisabled={selected === null} />
     </form>
   );
 };

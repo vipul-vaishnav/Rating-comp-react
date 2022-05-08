@@ -1,19 +1,31 @@
-import React from 'react';
-import Star from '../images/icon-star.svg';
-import Form from './Form';
+import React, { useState } from 'react';
+import CardState1 from './CardState1';
+import CardState2 from './CardState2';
 
 const Card = () => {
+  // For Rating
+  const [selected, setSelected] = useState(null);
+  const handleChange = (e) => {
+    setSelected(+e.currentTarget.value);
+  };
+  const handleForm = (e) => {
+    e.preventDefault();
+    handleState();
+  };
+
+  // For Rendering
+  const [state, setState] = useState(true);
+  const handleState = () => {
+    setState((prev) => !prev);
+  };
+
   return (
     <div className="card">
-      <div className="card-star">
-        <img src={Star} alt="Star" />
-      </div>
-      <h1 className="card-title">How did we do?</h1>
-      <p className="card-description">
-        Please let us know how we did with your support request. All feedback is appreciated to help us improve our
-        offering!
-      </p>
-      <Form />
+      {state ? (
+        <CardState1 handleState={handleState} handleChange={handleChange} handleForm={handleForm} selected={selected} />
+      ) : (
+        <CardState2 value={selected} />
+      )}
     </div>
   );
 };

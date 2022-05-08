@@ -29,6 +29,12 @@ html {
   font-size: 62.5%;
 }
 
+@media screen and (max-width: 390px) {
+  html {
+    font-size: 50%;
+  }
+}
+
 body {
   margin: 0;
   font-family: 'Overpass', sans-serif;

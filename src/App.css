@@ -17,9 +17,15 @@
     rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
 
+@media screen and (max-width: 345px) {
+  .card {
+    padding: 3rem 1.8rem;
+  }
+}
+
 .card-star {
-  width: 50px;
-  height: 50px;
+  width: 5rem;
+  height: 5rem;
   background-color: var(--DarkBlue2);
   display: flex;
   justify-content: center;
@@ -51,9 +57,8 @@
 }
 
 .card-form-input {
-  width: 50px;
-  height: 50px;
-
+  width: 5rem;
+  height: 5rem;
   border-radius: 50%;
   overflow: hidden;
 }
@@ -78,7 +83,7 @@
   background-color: var(--MediumGrey);
 }
 
-.card-form-input label:active {
+[type='radio']:checked ~ label {
   background-color: var(--Orange);
   color: var(--White);
 }
@@ -107,6 +112,42 @@
 .btn-primary:active {
   color: var(--Orange);
   background-color: var(--White);
+}
+
+.btn-primary:disabled {
+  cursor: not-allowed;
+  background-color: var(--Orange);
+  color: var(--White);
+}
+
+.card-state2 {
+  text-align: center;
+}
+
+.card-illustration {
+  margin-bottom: 2rem;
+}
+
+.card-rating-block {
+  background-color: var(--DarkBlue2);
+  padding: 1rem 2.5rem;
+  width: max-content;
+  margin: 0 auto 3rem;
+  border-radius: 50px;
+}
+
+.card-rating-text {
+  color: var(--Orange);
+}
+
+.card-greeting {
+  color: var(--White);
+  margin-bottom: 1.5rem;
+}
+
+.card-message {
+  color: var(--MediumGrey);
+  line-height: 1.5;
 }
 
 @media screen and (max-width: 450px) {
