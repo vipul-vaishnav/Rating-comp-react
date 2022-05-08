@@ -1,38 +1,116 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.container {
+  width: 100%;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  background-color: var(--VeryDarkBlue);
 }
 
-.App-link {
-  color: #61dafb;
+.card {
+  max-width: 400px;
+  width: 100%;
+  border-radius: 2.4rem;
+  padding: 3rem 2.4rem;
+  background-color: var(--DarkBlue);
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+    rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.card-star {
+  width: 50px;
+  height: 50px;
+  background-color: var(--DarkBlue2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin-bottom: 3rem;
+}
+
+.card-title {
+  color: var(--White);
+  margin-bottom: 1.5rem;
+}
+
+.card-description {
+  color: var(--MediumGrey);
+  line-height: 1.5;
+  margin-bottom: 3rem;
+}
+
+.card-form {
+  width: 100%;
+}
+
+.card-form-inputs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.4rem;
+}
+
+.card-form-input {
+  width: 50px;
+  height: 50px;
+
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.card-form-input label {
+  background-color: var(--DarkBlue2);
+  color: var(--MediumGrey);
+  width: 100%;
+  height: 100%;
+  font-size: 2.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  cursor: pointer;
+  padding-top: 0.55rem;
+  transition: all 0.2s ease-in-out 0.1s;
+}
+
+.card-form-input label:hover {
+  color: var(--White);
+  background-color: var(--MediumGrey);
+}
+
+.card-form-input label:active {
+  background-color: var(--Orange);
+  color: var(--White);
+}
+
+.btn {
+  border: 0;
+  outline: 0;
+  width: 100%;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 1.5rem;
+  border-radius: 50px;
+  padding: 1.5rem 0 1.25rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.btn-primary {
+  background-color: var(--Orange);
+  color: var(--White);
+  transition: all 0.2s ease-in-out 0.1s;
+}
+
+.btn-primary:hover,
+.btn-primary:active {
+  color: var(--Orange);
+  background-color: var(--White);
+}
+
+@media screen and (max-width: 450px) {
+  .card {
+    width: 90%;
   }
 }
